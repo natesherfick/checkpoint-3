@@ -1,0 +1,19 @@
+.honeydew{
+  background-color: rgb(227, 225, 175);
+}
+
+.titleish-font{
+  font-family: 'Pacifico', cursive;
+}
+
+.listish-font{
+  font-family: 'Bebas Neue', cursive;
+}
+
+.taskish-font{
+  font-family: 'Caveat', cursive;
+}
+
+.btn-ish{
+  font-weight: 900;
+}

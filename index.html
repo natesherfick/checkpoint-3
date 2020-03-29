@@ -8,16 +8,42 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css" />
-    <title>TaskMaster</title>
+    <title>Honey-Do</title>
   </head>
 
   <body>
+    <div class="container-fluid">
+      <div class="row honeydew pb-2">
+        <div class="col-4 mx-auto">
+          <h1 class="text-center titleish-font">Honey-Do</h1>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-12">
+        <form class="w-25" onsubmit="app.ListController.create(event)">
+          <div class="form-group">
+            <label for="listName" class="listish-font mt-2 mb-0">Enter New List Name Below</label>
+            <input
+              type="text"
+              name="listName"
+              class="form-control"
+              placeholder="Honey, I made a list for you..."
+            />
+          </div>
+          <button type="submit" class="btn btn-light btn-ish honeydew">+</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="listsHTML">
+    <!-- Here there be lists drawn -->
+</div>
 
 
-
-
-    
     <script src="app/main.js" type="module"></script>
   </body>
 </html>

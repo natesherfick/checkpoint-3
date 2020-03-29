@@ -1,7 +1,13 @@
 import ListService from "../Services/ListService.js";
+import store from "../store.js";
 
 //TODO Don't forget to render to the screen after every data change.
-function _drawLists() {}
+function _drawLists() {
+let templateHTML = ""
+let toDoLists = store.State.lists
+
+toDoLists.forEach(list => templateHTML += list.Template)
+}
 
 //Public
 export default class ListController {
