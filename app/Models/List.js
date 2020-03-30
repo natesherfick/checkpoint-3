@@ -14,18 +14,18 @@ export default class List {
   get Template() {
     return `
 <div class="col-4 border border-warning rounded shadow">
-      <button type="button" class="close text-danger" onclick="app.ListController.delete('${this.id}')">
+      <button type="button" class="close text-danger" onclick="app.listController.delete('${this.id}')">
       <span>&times;</span>
       </button>
-        <h1>${this.listName}</h1>
-        <form onsubmit="app.ListController.addTask(event, '${this.id}')">
+        <h1 class="listish-font">${this.listName}</h1>
+        <form onsubmit="app.listController.addTask(event, '${this.id}')">
           <div class="form-group">
             <label for="taskName">Task Name:</label>
             <input type="text" name="taskName" class="form-control" placeholder="Type a task in here..." aria-describedby="helpId">
           </div>
         </form>
         <h5>Tasks To Do</h5>
-        <dl>
+        <dl class"taskish-font">
           ${this.Tasks}
         </dl>
       </div>

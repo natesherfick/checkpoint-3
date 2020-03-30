@@ -7,6 +7,7 @@ function _drawLists() {
   let toDoLists = _store.State.lists;
 
   toDoLists.forEach(list => (templateHTML += list.Template));
+  document.getElementById("listsHTML").innerHTML = templateHTML
 }
 
 //Public
@@ -17,7 +18,7 @@ export default class ListController {
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
-  createList(event) {
+  create(event) {
     console.log("controller");
     
     event.preventDefault();
@@ -27,8 +28,39 @@ export default class ListController {
       listName: formData.listName.value
     };
 
-    _listService.createList(newListName);
+    _listService.create(newListName);
     _drawLists();
     formData.reset();
+  }
+
+  delete(listId){
+    let doit = confirm("Are you sure?")
+      if (doit == true){
+        _listService.delete(listId)
+        _drawLists()
+      }
+    else {
+    _drawLists()
+  }
+  }
+
+  addTask(event, listId){
+    event.preventDefault()
+    let formData = event.target
+    let newTaskName = {
+      taskName: formData.taskName.value
+    }
+    _listService.addTask(newTaskName, listId)
+    _drawLists()
+  }
+
+  deleteTask(listId, taskId){
+    let doit = confirm("Are you sure?")
+    if( doit == true){
+    _listService.deleteTask(listId, taskId)
+    _drawLists()}
+    else{
+      _drawLists()
+    }
   }
 }

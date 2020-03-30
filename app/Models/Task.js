@@ -10,10 +10,10 @@ constructor(data){
 getTemplate(listId){
   return `
   <dd>
-      <button type="button" class="close text-danger" onclick="app.ListController.deleteTask('${listId}','${this.id}')">
+      <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${listId}','${this.id}')">
       <span>&times;</span>
       </button>
-      <h5>${this.taskName}</h5>
+      <h5 class="taskish-font">${this.taskName}</h5>
       </dd>
     `
 }
