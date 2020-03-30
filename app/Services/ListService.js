@@ -18,7 +18,7 @@ class ListService {
   }
 
 delete(listId) {
-  let i = _store.State.lists.findIndex(list => listId == list.id)
+  let i = _store.State.lists.findIndex(list => list.id == listId)
   _store.State.lists.splice(i,1)
 
   _store.saveState()
@@ -33,10 +33,9 @@ addTask(newTaskName, listId){
 }
 
 deleteTask(listId, taskId){
-  debugger
-let list = _store.State.lists.find(list => listId == list.id)
-let i = list.tasks.findIndex(i => taskId == taskId.id)
-_store.State.list.tasks.splice(i,1)
+let foundList = _store.State.lists.find(list => list.id == listId)
+let i = foundList.tasks.findIndex(task => task.id == taskId)
+foundList.tasks.splice(i,1)
 
 _store.saveState()
 }

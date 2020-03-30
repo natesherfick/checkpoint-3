@@ -34,14 +34,12 @@ export default class ListController {
   }
 
   delete(listId){
-    let doit = confirm("Are you sure?")
-      if (doit == true){
+    let doIt = confirm("Are you sure?")
+      if (doIt == true){
         _listService.delete(listId)
         _drawLists()
       }
-    else {
-    _drawLists()
-  }
+    
   }
 
   addTask(event, listId){
@@ -55,12 +53,10 @@ export default class ListController {
   }
 
   deleteTask(listId, taskId){
-    let doit = confirm("Are you sure?")
-    if( doit == true){
+    let doIt = confirm("Are you sure?")
+    if( doIt == true){
     _listService.deleteTask(listId, taskId)
     _drawLists()}
-    else{
-      _drawLists()
-    }
+    
   }
 }
