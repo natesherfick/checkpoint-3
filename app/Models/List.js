@@ -7,7 +7,7 @@ export default class List {
     this.listName = data.listName;
     this.id = data.id || generateId();
     /**@type {Task[]} */
-    this.tasks = [];
+    this.tasks = data.tasks.map(i => new Task(i)) || [];
   }
   //Be sure to add the methods needed to create the view template for this model
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
